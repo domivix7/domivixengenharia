@@ -3,138 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Domivix Engenharia Elétrica</title>
-  <meta name="description" content="Domivix Engenharia Elétrica – Projetos, laudos, SPDA, instalações e manutenções para condomínios, empresas e residências." />
+  <title>Domivix VII Engenharia Elétrica</title>
+  <meta name="description" content="Domivix VII Engenharia Elétrica – Projetos, laudos, SPDA, instalações e manutenções para condomínios, empresas e residências." />
+
   <style>
+    /* ================= BASE ================= */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
+
+    :root {
+      --bg-main: #050508;
+      --bg-elevated: #0b0b10;
+      --gold: #d4af37;
+      --gold-soft: #facc6b;
+      --red: #b91c1c;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(212, 175, 55, 0.3);
+    }
+
     body {
-      background: #0f172a;
-      color: #e5e7eb;
+      background: radial-gradient(circle at top, rgba(212, 175, 55, 0.07), transparent 60%), var(--bg-main);
+      color: var(--text-main);
       line-height: 1.6;
     }
+
     a {
       color: inherit;
       text-decoration: none;
     }
-    header {
-      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
-      background: rgba(15, 23, 42, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-    }
+
     .container {
       max-width: 1080px;
       margin: 0 auto;
       padding: 0 1.25rem;
     }
+
+    /* ================= HEADER ================= */
+    header {
+      border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(5, 5, 8, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+    }
+
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 0;
+      padding: 0.7rem 0;
+      gap: 1rem;
     }
+
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      border: 2px solid rgba(212, 175, 55, 0.8);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+      object-fit: cover;
+      background: #000;
+    }
+
+    .brand-text {
       display: flex;
       flex-direction: column;
     }
+
     .brand-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #38bdf8;
+      color: var(--gold);
     }
+
     .brand-sub {
-      font-size: 0.8rem;
-      color: #94a3b8;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
+
     .nav-contact {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      font-size: 0.8rem;
-      color: #cbd5f5;
+      font-size: 0.78rem;
+      color: var(--text-main);
     }
+
     .nav-contact strong {
-      color: #e5e7eb;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
     }
+
     .whats-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      margin-top: 0.1rem;
-      padding: 0.1rem 0.6rem;
+      margin-top: 0.15rem;
+      padding: 0.12rem 0.65rem;
       border-radius: 999px;
-      background: rgba(22, 163, 74, 0.18);
-      border: 1px solid rgba(34, 197, 94, 0.5);
+      background: rgba(185, 28, 28, 0.18);
+      border: 1px solid rgba(248, 113, 113, 0.6);
       font-size: 0.75rem;
     }
+
     .whats-dot {
       width: 7px;
       height: 7px;
       border-radius: 999px;
       background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
     }
+
+    .nav-email {
+      margin-top: 0.12rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-contact {
+        align-items: flex-start;
+      }
+    }
+
     main {
       padding-bottom: 3rem;
     }
+
+    /* ================= HERO ================= */
     .hero {
-      padding: 2.5rem 0 2rem;
+      padding: 2.4rem 0 2rem;
       display: grid;
       grid-template-columns: minmax(0, 2fr);
-      gap: 1.5rem;
+      gap: 1.6rem;
     }
+
     @media (min-width: 768px) {
       .hero {
         grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
         align-items: center;
       }
     }
+
     .hero-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
       font-size: 0.78rem;
-      padding: 0.2rem 0.6rem;
+      padding: 0.22rem 0.7rem;
       border-radius: 999px;
-      background: rgba(15, 118, 110, 0.4);
-      border: 1px solid rgba(45, 212, 191, 0.7);
-      color: #a5f3fc;
+      background: rgba(12, 10, 6, 0.9);
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      color: var(--gold-soft);
       margin-bottom: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
+
     .hero-tag-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #22c55e;
+      background: var(--red);
+      box-shadow: 0 0 10px rgba(185, 28, 28, 0.9);
     }
+
     .hero-title {
-      font-size: 2.1rem;
-      font-weight: 700;
-      color: #e5e7eb;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold-soft);
       margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
+
     @media (min-width: 768px) {
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
       }
     }
+
     .hero-title span {
-      color: #38bdf8;
+      display: block;
+      color: #f9fafb;
+      font-weight: 700;
     }
+
     .hero-text {
-      font-size: 0.98rem;
-      color: #cbd5f5;
-      margin-bottom: 1.5rem;
-      max-width: 32rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 1.6rem;
+      max-width: 34rem;
     }
+
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
@@ -142,118 +224,143 @@
       margin-bottom: 1.5rem;
       font-size: 0.78rem;
     }
+
     .badge {
-      padding: 0.15rem 0.7rem;
+      padding: 0.18rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: #cbd5f5;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.6);
     }
+
     .badge.highlight {
-      border-color: rgba(56, 189, 248, 0.9);
-      color: #e0f2fe;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent);
+      border-color: rgba(212, 175, 55, 0.95);
+      color: var(--gold-soft);
+      background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.2), transparent);
     }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
+
     .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0.7rem 1.4rem;
+      padding: 0.7rem 1.5rem;
       border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #ecfdf5;
+      border: 1px solid rgba(248, 113, 113, 0.7);
+      background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.3), transparent),
+                  linear-gradient(135deg, #7f1d1d, #b91c1c);
+      color: #fef2f2;
       font-weight: 600;
       font-size: 0.95rem;
-      box-shadow: 0 10px 25px rgba(22, 163, 74, 0.32);
+      box-shadow: 0 14px 30px rgba(185, 28, 28, 0.55);
     }
+
     .btn-primary span.icon {
       font-size: 1.1rem;
     }
+
     .btn-ghost {
-      padding: 0.68rem 1.1rem;
+      padding: 0.65rem 1.2rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: transparent;
-      color: #e5e7eb;
-      font-size: 0.9rem;
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      background: rgba(12, 10, 6, 0.9);
+      color: var(--gold-soft);
+      font-size: 0.88rem;
     }
+
     .hero-note {
-      font-size: 0.8rem;
-      color: #9ca3af;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
+
+    /* ================= HERO CARD ================= */
     .hero-card {
       border-radius: 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.4), transparent 55%),
-        #020617;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      background: radial-gradient(circle at top, rgba(212, 175, 55, 0.1), transparent 55%),
+                  var(--bg-elevated);
       padding: 1.4rem 1.2rem;
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.8);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.9);
       font-size: 0.85rem;
     }
+
     .hero-card-title {
       font-size: 0.9rem;
-      color: #e5e7eb;
+      color: var(--gold-soft);
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
     }
+
     .hero-card-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.55rem;
+      gap: 0.6rem;
       font-size: 0.78rem;
     }
+
     .hero-card-item {
       padding: 0.6rem 0.65rem;
       border-radius: 0.7rem;
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15, 23, 42, 0.8);
       border: 1px solid rgba(148, 163, 184, 0.4);
     }
+
     .hero-card-label {
-      color: #9ca3af;
+      color: var(--text-muted);
       font-size: 0.75rem;
-      margin-bottom: 0.1rem;
+      margin-bottom: 0.12rem;
     }
+
     .hero-card-value {
-      color: #e5e7eb;
+      color: var(--text-main);
       font-weight: 600;
       font-size: 0.86rem;
     }
+
     .hero-card-footer {
       font-size: 0.75rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       margin-top: 0.4rem;
     }
+
+    /* ================= SEÇÕES ================= */
     .section {
-      padding: 1.25rem 0 0.75rem;
+      padding: 1.35rem 0 0.8rem;
     }
+
     .section-title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
-      color: #e5e7eb;
+      color: var(--gold-soft);
       margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
     }
+
     .section-sub {
-      font-size: 0.85rem;
-      color: #9ca3af;
+      font-size: 0.84rem;
+      color: var(--text-muted);
       margin-bottom: 1rem;
-      max-width: 34rem;
+      max-width: 36rem;
     }
+
     .grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       gap: 0.75rem;
     }
+
     @media (min-width: 720px) {
       .grid-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -262,207 +369,256 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
     .card {
       padding: 0.9rem 0.9rem 0.85rem;
       border-radius: 0.9rem;
-      border: 1px solid rgba(55, 65, 81, 0.8);
+      border: 1px solid rgba(55, 65, 81, 0.9);
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.05), transparent 60%),
-        rgba(15, 23, 42, 0.98);
-      font-size: 0.85rem;
+        radial-gradient(circle at top left, rgba(212, 175, 55, 0.06), transparent 60%),
+        rgba(9, 9, 13, 1);
+      font-size: 0.84rem;
     }
+
     .card h3 {
-      font-size: 0.92rem;
-      margin-bottom: 0.2rem;
-      color: #e5e7eb;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+      color: var(--gold-soft);
     }
+
     .card p {
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: var(--text-main);
     }
+
     .card ul {
       margin-top: 0.45rem;
       padding-left: 1rem;
     }
+
     .card li {
       font-size: 0.8rem;
-      color: #9ca3af;
-      margin-bottom: 0.1rem;
+      color: var(--text-muted);
+      margin-bottom: 0.12rem;
     }
+
     .pill {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
       font-size: 0.74rem;
-      padding: 0.12rem 0.55rem;
+      padding: 0.12rem 0.58rem;
       border-radius: 999px;
-      background: rgba(30, 64, 175, 0.65);
-      color: #bfdbfe;
+      background: rgba(30, 64, 175, 0.35);
+      color: #e5e7eb;
       margin-bottom: 0.35rem;
     }
+
     .divider {
       height: 1px;
       background: radial-gradient(circle, rgba(148, 163, 184, 0.7) 0, transparent 60%);
-      margin: 1.5rem 0 1rem;
-      opacity: 0.75;
+      margin: 1.6rem 0 1.1rem;
+      opacity: 0.7;
     }
+
     .contact-card {
       border-radius: 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid var(--border-soft);
       padding: 1rem 1rem 0.9rem;
       display: grid;
       grid-template-columns: minmax(0, 1.5fr);
       gap: 0.6rem;
       background:
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 55%),
-        rgba(15, 23, 42, 0.96);
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.13), transparent 55%),
+        rgba(9, 9, 13, 0.98);
       font-size: 0.85rem;
     }
+
     @media (min-width: 720px) {
       .contact-card {
         grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
         align-items: center;
       }
     }
+
     .contact-row {
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
     }
+
     .label {
       font-size: 0.76rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
+
     .value {
       font-size: 0.9rem;
-      color: #e5e7eb;
+      color: var(--text-main);
       font-weight: 500;
     }
+
     .value span {
-      color: #a5b4fc;
+      color: var(--gold-soft);
       font-weight: 400;
     }
+
     .contact-list {
       list-style: none;
       margin-top: 0.4rem;
     }
+
     .contact-list li {
       font-size: 0.8rem;
-      color: #cbd5f5;
+      color: var(--text-main);
       margin-bottom: 0.25rem;
     }
+
+    /* ================= FOOTER ================= */
     footer {
-      border-top: 1px solid rgba(30, 64, 175, 0.9);
+      border-top: 1px solid rgba(24, 24, 27, 1);
       margin-top: 2rem;
-      padding: 0.75rem 0 1.2rem;
+      padding: 0.8rem 0 1.2rem;
       font-size: 0.75rem;
-      color: #6b7280;
+      color: var(--text-muted);
       text-align: center;
+      background: radial-gradient(circle at bottom, rgba(0, 0, 0, 0.8), transparent 60%);
     }
+
     footer a {
-      color: #93c5fd;
+      color: var(--gold-soft);
     }
   </style>
 </head>
+
 <body>
+
+  <!-- =============== HEADER =============== -->
   <header>
     <div class="container">
       <div class="nav">
+
+        <!-- LOGO + TEXTO -->
         <div class="brand">
-          <span class="brand-title">Domivix Engenharia Elétrica</span>
-          <span class="brand-sub">Projetos • Laudos • SPDA • Instalações e Manutenções</span>
+          <img src="LogoDomivix.png" alt="Domivix VII Engenharia" class="logo" />
+          <div class="brand-text">
+            <span class="brand-title">Domivix VII Engenharia</span>
+            <span class="brand-sub">Projetos • Laudos • SPDA • Instalações e Manutenções</span>
+          </div>
         </div>
+
+        <!-- CONTATO -->
         <div class="nav-contact">
-          <span><strong>Atendimento WhatsApp</strong></span>
-          <a href="https://wa.me/5541987523879" target="_blank" rel="noopener noreferrer" class="whats-pill">
+          <strong>Atendimento WhatsApp</strong>
+
+          <a href="https://wa.me/5541987523879?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento+para+condom%C3%ADnio."
+             target="_blank" rel="noopener noreferrer" class="whats-pill">
             <span class="whats-dot"></span>
             <span>(41) 98752-3879</span>
           </a>
-          <span style="margin-top: 0.15rem;">contato@domivixengenharia.com.br</span>
+
+          <span class="nav-email">contato@domivixengenharia.com.br</span>
         </div>
+
       </div>
     </div>
   </header>
 
+  <!-- =============== CONTEÚDO =============== -->
   <main>
     <div class="container">
+
+      <!-- HERO -->
       <section class="hero">
         <div>
           <div class="hero-tag">
             <span class="hero-tag-dot"></span>
-            <span>Engenharia elétrica focada em resultado para condomínios e empresas</span>
+            <span>Engenharia elétrica para condomínios e empresas</span>
           </div>
+
           <h1 class="hero-title">
-            Projetos, laudos e<br />
-            <span>soluções elétricas completas</span>
-            para o seu empreendimento.
+            ENGENHARIA ELÉTRICA
+            <span>COM FOCO EM RESULTADO E SEGURANÇA</span>
           </h1>
+
           <p class="hero-text">
-            Auxiliamos síndicos, administradoras e empresas a manterem suas
-            instalações em segurança e conformidade com normas técnicas,
-            reduzindo riscos de panes, incêndios e autuações.
+            Domivix VII Engenharia atua com projetos, laudos e soluções em SPDA, aterramento,
+            instalações e manutenções elétricas para condomínios, comércios e indústrias,
+            sempre alinhado às normas técnicas e à segurança dos ocupantes.
           </p>
 
           <div class="hero-badges">
-            <span class="badge.highlight badge">SPDA • Aterramento • NBR 5419</span>
-            <span class="badge">Laudos e ART para condomínios</span>
-            <span class="badge">Instalações e manutenções elétricas</span>
+            <span class="badge highlight">SPDA • Aterramento • NBR 5419</span>
+            <span class="badge">Laudos técnicos e ART para condomínios</span>
+            <span class="badge">Adequação para AVCB e seguros</span>
           </div>
 
           <div class="hero-actions">
-            <a href="https://wa.me/5541987523879?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento+de+servi%C3%A7os+el%C3%A9tricos."
+            <a href="https://wa.me/5541987523879?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento+para+servi%C3%A7os+el%C3%A9tricos."
                class="btn-primary" target="_blank" rel="noopener noreferrer">
               <span class="icon">💬</span>
               <span>Chamar no WhatsApp</span>
             </a>
+
             <a href="#servicos" class="btn-ghost">Ver principais serviços</a>
           </div>
 
           <p class="hero-note">
-            Resposta rápida em horário comercial. Atuação em Curitiba, Região Metropolitana e proximidades.
+            Atuação em Curitiba, Região Metropolitana e cidades próximas. Atendimento direcionado a síndicos,
+            administradoras de condomínio e empresas.
           </p>
         </div>
 
+        <!-- CARD LATERAL -->
         <aside class="hero-card">
           <div class="hero-card-title">Resumo profissional</div>
+
           <div class="hero-card-grid">
             <div class="hero-card-item">
               <div class="hero-card-label">Responsável técnico</div>
               <div class="hero-card-value">Eng. Sebastião R. de Melo Jr.</div>
             </div>
+
             <div class="hero-card-item">
               <div class="hero-card-label">Registro</div>
               <div class="hero-card-value">CREA-PR 77443/D</div>
             </div>
+
             <div class="hero-card-item">
               <div class="hero-card-label">Atuação</div>
               <div class="hero-card-value">Condomínios, comércios e indústrias</div>
             </div>
+
             <div class="hero-card-item">
               <div class="hero-card-label">Serviços</div>
               <div class="hero-card-value">Projetos, laudos, SPDA, manutenção</div>
             </div>
           </div>
+
           <p class="hero-card-footer">
-            Experiência em manutenção predial, adequações para AVCB, SPDA conforme NBR 5419 e regularização de instalações elétricas.
+            Experiência em manutenção predial, adequações para AVCB, SPDA conforme NBR 5419
+            e regularização de instalações elétricas junto a órgãos competentes.
           </p>
         </aside>
       </section>
 
+      <!-- SERVIÇOS -->
       <section id="servicos" class="section">
         <h2 class="section-title">Principais serviços</h2>
         <p class="section-sub">
-          Atendemos desde pequenas adequações até projetos completos para condomínios, com foco em segurança,
-          rastreabilidade técnica e custo-benefício.
+          Foco em soluções práticas para síndicos e administradoras, com documentação técnica clara e suporte
+          na hora de apresentar aos condôminos, bombeiros ou seguradoras.
         </p>
+
         <div class="grid grid-3">
           <article class="card">
             <span class="pill">Laudos &amp; ART</span>
             <h3>Laudos técnicos elétricos</h3>
             <p>
-              Vistorias completas com relatório fotográfico, recomendações de adequação e emissão de ART junto ao CREA.
+              Vistorias completas com relatório fotográfico, apontamento de não conformidades
+              e emissão de ART junto ao CREA.
             </p>
             <ul>
               <li>Laudos de instalações elétricas</li>
@@ -470,24 +626,27 @@
               <li>Laudo para AVCB e seguros</li>
             </ul>
           </article>
+
           <article class="card">
             <span class="pill">SPDA • NBR 5419</span>
             <h3>SPDA e aterramento</h3>
             <p>
-              Verificação de captores, descidas, malhas e conexões, com análise das condições de continuidade e aterramento.
+              Verificação de captores, descidas, malhas, conexões e condições de continuidade,
+              com recomendações claras de adequação.
             </p>
             <ul>
               <li>Inspeção visual e medições</li>
               <li>Relatório com não conformidades</li>
-              <li>Plano de ações para adequação</li>
+              <li>Plano de ações priorizadas</li>
             </ul>
           </article>
+
           <article class="card">
             <span class="pill">Instalações &amp; reforma</span>
             <h3>Projetos e manutenções</h3>
             <p>
-              Adequações em quadros, circuitos, condutores e dispositivos de proteção, sempre priorizando
-              segurança e organização.
+              Adequações em quadros, circuitos, condutores e dispositivos de proteção,
+              sempre priorizando segurança e organização.
             </p>
             <ul>
               <li>Quadros de distribuição e cargas</li>
@@ -500,39 +659,43 @@
 
       <div class="divider"></div>
 
+      <!-- FLUXO DE ATENDIMENTO -->
       <section class="section">
         <h2 class="section-title">Como funciona o atendimento</h2>
         <p class="section-sub">
-          Procuramos simplificar ao máximo a contratação, mantendo a parte técnica bem documentada para o síndico
-          e a administradora.
+          Um passo a passo simples para que o síndico ou administrador tenha segurança em cada etapa.
         </p>
+
         <div class="grid grid-2">
           <article class="card">
-            <h3>1. Contato e entendimento da necessidade</h3>
+            <h3>1. Contato inicial</h3>
             <p>
-              Primeiro alinhamos pelo WhatsApp ou telefone qual é a demanda: laudo, projeto, vistoria ou manutenção.
-              Sempre que possível, solicitamos fotos e documentos existentes (plantas, laudos antigos, AVCB, etc.).
+              Alinhamento rápido pelo WhatsApp ou telefone para entender a necessidade:
+              laudo, SPDA, projeto ou manutenção.
             </p>
           </article>
+
           <article class="card">
-            <h3>2. Visita técnica e orçamento</h3>
+            <h3>2. Visita técnica</h3>
             <p>
-              Agendamos visita em horário combinado. Após a avaliação, enviamos orçamento com descrição dos serviços,
-              prazos e condições de pagamento.
+              Agendamento em horário combinado. Avaliação em campo com registro fotográfico
+              e análise das condições atuais.
             </p>
           </article>
+
           <article class="card">
-            <h3>3. Execução e entrega</h3>
+            <h3>3. Proposta e execução</h3>
             <p>
-              Os serviços são executados conforme o combinado, com emissão de laudos, ART e orientações para as
-              próximas manutenções preventivas.
+              Envio de orçamento detalhado. Após aprovação, execução dos serviços e emissão
+              de laudos, ART e relatórios necessários.
             </p>
           </article>
+
           <article class="card">
             <h3>4. Suporte pós-serviço</h3>
             <p>
-              Permanecemos à disposição para esclarecimentos ao síndico, administradora, Corpo de Bombeiros ou
-              seguradora, quando necessário.
+              Apoio ao síndico e à administradora para esclarecimentos junto a Corpo de Bombeiros,
+              seguradoras ou demais órgãos, quando necessário.
             </p>
           </article>
         </div>
@@ -540,12 +703,14 @@
 
       <div class="divider"></div>
 
+      <!-- CONTATO -->
       <section id="contato" class="section">
         <h2 class="section-title">Contato</h2>
         <p class="section-sub">
-          Envie uma mensagem com o nome do condomínio/empresa e uma breve descrição da necessidade. Se já tiver
-          laudos ou projetos anteriores, você pode encaminhar pelo WhatsApp para análise.
+          Para agilizar o atendimento, envie pelo WhatsApp o nome do condomínio ou empresa,
+          cidade e uma breve descrição da necessidade.
         </p>
+
         <div class="contact-card">
           <div class="contact-row">
             <div>
@@ -555,37 +720,40 @@
                 <span>Engenheiro Eletricista • CREA-PR 77443/D</span>
               </div>
             </div>
+
             <ul class="contact-list">
-              <li><strong>WhatsApp:</strong> <a href="https://wa.me/5541987523879" target="_blank" rel="noopener noreferrer">(41) 98752-3879</a></li>
+              <li><strong>WhatsApp:</strong> <a href="https://wa.me/5541987523879" target="_blank">(41) 98752-3879</a></li>
               <li><strong>E-mail:</strong> <a href="mailto:contato@domivixengenharia.com.br">contato@domivixengenharia.com.br</a></li>
               <li><strong>Domínio:</strong> domivixengenharia.com.br</li>
             </ul>
           </div>
+
           <div class="contact-row">
             <div class="label">Atuação principal</div>
             <div class="value">
               Curitiba, Região Metropolitana e cidades próximas, com possibilidade de atendimento em outras regiões
               mediante agendamento.
             </div>
-            <p style="margin-top: 0.6rem; font-size: 0.78rem; color: #9ca3af;">
-              Para agilizar o orçamento, informe:
-              nome do condomínio/empresa, endereço, tipo de serviço desejado
-              (laudo, SPDA, projeto, manutenção) e, se possível, metragem aproximada ou número de blocos.
+            <p style="margin-top: 0.6rem; font-size: 0.78rem; color: var(--text-muted);">
+              Quanto mais informações você enviar (fotos, plantas, laudos antigos, AVCB), mais assertivo
+              será o orçamento e o plano de ações.
             </p>
           </div>
         </div>
       </section>
+
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>Domivix Engenharia Elétrica — Site institucional simples em HTML estático.</p>
+      <p>Domivix VII Engenharia Elétrica — Site institucional em HTML estático.</p>
       <p style="margin-top: 0.25rem;">
-        Este site é hospedado gratuitamente via GitHub Pages. Para ajustes de texto ou inclusão de novos serviços,
-        entre em contato pelo WhatsApp.
+        Hospedado gratuitamente via GitHub Pages. Ajustes de conteúdo podem ser feitos conforme a necessidade dos serviços.
       </p>
     </div>
   </footer>
+
 </body>
 </html>
